@@ -319,18 +319,36 @@ MonoBehaviour:
     frameRate: 0
     loop: 0
     unstoppable: 0
-  - animationName: Walk
+  - animationName: Hit
     frames:
-    - {fileID: 2627294696224789840, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: -7512213230153046130, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: 830883647339762077, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: -5092062182813528432, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: 724282607026121063, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: -3025515330137168691, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: -7772827946506075600, guid: f713eae58378f6543adee74293756b04, type: 3}
-    - {fileID: 6891665544650684598, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -7036102898719245814, guid: b4a544428ed734a4f9001180126909e7, type: 3}
+    - {fileID: -3276610263806563028, guid: b4a544428ed734a4f9001180126909e7, type: 3}
+    - {fileID: -3412415616238721831, guid: b4a544428ed734a4f9001180126909e7, type: 3}
+    - {fileID: 3320391658436172315, guid: b4a544428ed734a4f9001180126909e7, type: 3}
     frameTags: []
-    frameRate: 0
+    frameRate: 8
     loop: 0
-    unstoppable: 0
+    unstoppable: 1
+  - animationName: Dead
+    frames:
+    - {fileID: -223445388130857864, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
+    - {fileID: -6654119650580407041, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
+    - {fileID: -7580704639516615134, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
+    - {fileID: -6881427664005366358, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
+  - animationName: Heal
+    frames:
+    - {fileID: 938037435119971776, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    - {fileID: 8672285291793718111, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    - {fileID: 3547073599913624731, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    - {fileID: 476566816292920638, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    - {fileID: 2353106724279924450, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    - {fileID: 7740503576319098228, guid: c2e8d77f6deb07e49899cd04339dbf16, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
   currentFrameTag: null
