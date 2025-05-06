@@ -466,6 +466,7 @@ MonoBehaviour:
   swingSize: {x: 0, y: 0}
   swingDistance: 0
   swingSelfKnockback: 0
+  spriteAnimator: {fileID: 0}
 --- !u!1 &1787036546
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,11 +504,12 @@ MonoBehaviour:
     laserBeamController: {fileID: 896772887}
   ownedAbilities: []
   allAbilities:
+  - {fileID: 11400000, guid: 33e4a5a98f489b442809bf0187934505, type: 2}
   - {fileID: 11400000, guid: 2b2e05c9d28dd2349b4d2ebbbfdb8d07, type: 2}
   - {fileID: 11400000, guid: 55c081f153fd40245a9e9ae3c01c5b70, type: 2}
   - {fileID: 11400000, guid: 0f88af3883f082148bc105e2a90b51cc, type: 2}
   mana: 0
-  maxMana: 0
+  maxMana: 100
 --- !u!4 &1787036548
 Transform:
   m_ObjectHideFlags: 0

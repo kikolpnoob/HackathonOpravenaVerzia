@@ -35,6 +35,10 @@ public class AbilityManager : MonoBehaviour
             {
                 laserAbility.laserBeam          = abilityParams.laserBeamController;
             }
+            if (ability is GroundSlamAbility groundSlam)
+            {
+                groundSlam.rigidbody            = abilityParams.bossRigidbody;
+            }
         }
 
         if (ownedAbilities == null)
