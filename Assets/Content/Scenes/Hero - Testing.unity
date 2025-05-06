@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6263829653512481322, guid: 7d2fb7b5db592014d9e8a879a844702a, type: 3}
+      propertyPath: animations.Array.data[3].frameRate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -617,6 +621,7 @@ MonoBehaviour:
   arrow: {fileID: 7116834591843732316, guid: 3063c9281fd623f40ba31aee15b05610, type: 3}
   arrowSpeed: 5
   swingSelfKnockback: 2.5
+  spriteAnimator: {fileID: 0}
 --- !u!1 &826828741
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +735,7 @@ MonoBehaviour:
   isUsingAction: 0
   actionStaminaCost: 120
   healAmount: 0
+  spriteAnimator: {fileID: 0}
 --- !u!1 &1113886545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1075,7 @@ MonoBehaviour:
   swingSize: {x: 1.5, y: 2}
   swingDistance: 2
   swingSelfKnockback: 5
+  spriteAnimator: {fileID: 0}
 --- !u!1001 &1725801095
 PrefabInstance:
   m_ObjectHideFlags: 0

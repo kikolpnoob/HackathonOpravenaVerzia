@@ -51,8 +51,7 @@ public class Boss : MonoBehaviour
             {
                 foreach (Collider2D enemy in enemies)
                 {
-                    //TODO: Ubere Demage 
-                   // enemy.GetComponentInParent<Hero>().EditHealth(-damage);
+                    enemy.GetComponentInParent<Hero>().EditHealth(-damage);
                 }
             }
         }

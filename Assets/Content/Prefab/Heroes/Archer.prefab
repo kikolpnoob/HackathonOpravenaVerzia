@@ -88,6 +88,7 @@ MonoBehaviour:
   arrow: {fileID: 5825864692745041378, guid: 3063c9281fd623f40ba31aee15b05610, type: 3}
   arrowSpeed: 5
   swingSelfKnockback: 2.5
+  spriteAnimator: {fileID: 1726581756804070821}
 --- !u!1 &2818405931913713687
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +266,7 @@ MonoBehaviour:
     - {fileID: -7643844325916662381, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
     - {fileID: -7055058324540839214, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
     frameTags: []
-    frameRate: 8
+    frameRate: 4
     loop: 0
     unstoppable: 1
   - animationName: Attack
