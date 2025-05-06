@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   xp: 0
+  feedbackPlayer: {fileID: 0}
   meeleAttackRadius: 1
   enemyLayerMask:
     serializedVersion: 2

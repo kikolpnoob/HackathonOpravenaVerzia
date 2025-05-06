@@ -33,6 +33,7 @@ public class Priest : Hero
 
     private IEnumerator Dies()
     {
+        rb.linearDamping = 18;
         spriteAnimator.PlayAnimation("Dead");
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);

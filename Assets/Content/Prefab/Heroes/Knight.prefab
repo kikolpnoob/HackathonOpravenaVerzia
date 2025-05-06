@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a4aeace3cc1d84dbde8a18d79c3c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 2436412191991922880}
   maxHealth: 100
   movementSpeed: 25
   minDistanceFromPlayer: 1.5

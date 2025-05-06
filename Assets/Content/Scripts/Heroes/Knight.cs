@@ -28,6 +28,7 @@ public class Knight : Hero
 
     private IEnumerator Dies()
     {
+        rb.linearDamping = 18;
         spriteAnimator.PlayAnimation("Dead");
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
@@ -44,7 +45,7 @@ public class Knight : Hero
         Vector2 swingDirection = (Boss.Transform.position - transform.position).normalized;
         Vector2 swingPosition = (Vector2)transform.position + swingDirection;
         spriteAnimator.PlayAnimation("Attack");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.375f);
         Collider2D col = Physics2D.OverlapBox(swingPosition, swingSize, Vector2.Angle(Vector2.up, swingDirection), bossMask);
         if (col != null)
         {
@@ -52,7 +53,7 @@ public class Knight : Hero
             // Debug.Log("Hit da boss");
         }
         rb.AddForce(-swingDirection * swingSelfKnockback * rb.mass, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.625f);
         isUsingAction = false;
     }
 }

@@ -533,14 +533,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2423989968105881385, guid: ea875bb1918131d4f80fef8fd4da93f3, type: 3}
-      propertyPath: enemyLayerMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3902405597945761770, guid: ea875bb1918131d4f80fef8fd4da93f3, type: 3}
-      propertyPath: hitLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5007637009530520870, guid: ea875bb1918131d4f80fef8fd4da93f3, type: 3}
       propertyPath: m_Name
       value: Boss

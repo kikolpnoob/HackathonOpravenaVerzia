@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb7c2f3e028d4f4496ad03872df9878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 3992376911557017438}
   maxHealth: 100
   movementSpeed: 25
   minDistanceFromPlayer: 5.5
@@ -337,7 +338,7 @@ MonoBehaviour:
     - {fileID: -7580704639516615134, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
     - {fileID: -6881427664005366358, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
     frameTags: []
-    frameRate: 5
+    frameRate: 4
     loop: 0
     unstoppable: 1
   - animationName: Heal
