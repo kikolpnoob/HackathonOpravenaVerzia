@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2216354730320016162
 Transform:
   m_ObjectHideFlags: 0
@@ -201,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3809376509709417984}
   - component: {fileID: 3992376911557017438}
+  - component: {fileID: 6263829653512481322}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -267,7 +268,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -663804655798916631, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -278,3 +279,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6263829653512481322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822435999779029373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ca4362c052a404ab177bc701b0ab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 3992376911557017438}
+  animations:
+  - animationName: Idle
+    frames:
+    - {fileID: -663804655798916631, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    - {fileID: -2566524390928899737, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    - {fileID: -6762606957532240787, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    - {fileID: -8571151364460497435, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    - {fileID: 1629379577001740549, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    - {fileID: 7521909360438926110, guid: c4ddb6628a00f50489fa05a667042121, type: 3}
+    frameTags: []
+    frameRate: 0
+    loop: 0
+    unstoppable: 0
+  - animationName: Walk
+    frames:
+    - {fileID: 2627294696224789840, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -7512213230153046130, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 830883647339762077, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -5092062182813528432, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 724282607026121063, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -3025515330137168691, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -7772827946506075600, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 6891665544650684598, guid: f713eae58378f6543adee74293756b04, type: 3}
+    frameTags: []
+    frameRate: 0
+    loop: 0
+    unstoppable: 0
+  - animationName: Walk
+    frames:
+    - {fileID: 2627294696224789840, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -7512213230153046130, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 830883647339762077, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -5092062182813528432, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 724282607026121063, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -3025515330137168691, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: -7772827946506075600, guid: f713eae58378f6543adee74293756b04, type: 3}
+    - {fileID: 6891665544650684598, guid: f713eae58378f6543adee74293756b04, type: 3}
+    frameTags: []
+    frameRate: 0
+    loop: 0
+    unstoppable: 0
+  currentFrameTag: null
