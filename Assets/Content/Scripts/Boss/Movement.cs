@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
-{ // Coded by kiko
+{ 
 
     private Rigidbody2D rb;
     [SerializeField] private new SpriteRenderer renderer;
@@ -13,8 +13,7 @@ public class Movement : MonoBehaviour
      
     [Header("Other")]
     private Vector2 moveDir; // Smer pohybu
-
-
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

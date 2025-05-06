@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8386741214737507690}
   - component: {fileID: 3902405597945761770}
   - component: {fileID: 2569142402368534041}
+  - component: {fileID: 3325678046520548562}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -163,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -6967218827304948987, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -213,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3156b56de379d46b19312cbf5679a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 804027892641225965}
+  animator: {fileID: 3325678046520548562}
   speed: 50
 --- !u!114 &2423989968105881385
 MonoBehaviour:
@@ -236,6 +239,7 @@ MonoBehaviour:
   delay: 0.5
   CanAttack: 1
   timer: 0
+  animator: {fileID: 3325678046520548562}
   enemies: []
 --- !u!114 &8386741214737507690
 MonoBehaviour:
@@ -382,6 +386,61 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &3325678046520548562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007637009530520870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ca4362c052a404ab177bc701b0ab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 804027892641225965}
+  animations:
+  - animationName: Idle
+    frames:
+    - {fileID: -6967218827304948987, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    - {fileID: -2582689681796817123, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    - {fileID: 5239070887845672902, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    - {fileID: 8711236559198195290, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    - {fileID: -5612623993386223237, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    - {fileID: -600239269196264424, guid: ebea8a6d50eca4c49afa5e156d587ebc, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Walk
+    frames:
+    - {fileID: 4762972965759509545, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: -467496773326053826, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: -4277353276443176154, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: 3971616282867014591, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: 1127462252342030170, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: 5749074350868987293, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: -63334707547655146, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    - {fileID: 3572186884227599840, guid: 97430a780cdcf3a47a87abf50aa6f177, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Attack1
+    frames:
+    - {fileID: -7304371395691662354, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: -5502613770763856643, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: -5171600912216366864, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: 4071341206943624054, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: 1562773691389614494, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: -3231506305399026275, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: 3518738520941088448, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    - {fileID: 3990685421678634285, guid: 8ee74ac28ba5b0c47b28d8a1b58a2baf, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
+  currentFrameTag: null
 --- !u!1 &8857592135285519857
 GameObject:
   m_ObjectHideFlags: 0
