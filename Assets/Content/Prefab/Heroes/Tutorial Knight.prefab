@@ -206,12 +206,15 @@ MonoBehaviour:
     frameRate: 8
     loop: 0
     unstoppable: 0
-  - animationName: Hit
+  - animationName: Attack1
     frames:
-    - {fileID: -6683126255077902358, guid: 19faa1d132c035f4b86e76e4a18bde51, type: 3}
-    - {fileID: 1902744039177482756, guid: 19faa1d132c035f4b86e76e4a18bde51, type: 3}
-    - {fileID: -4285594652000648524, guid: 19faa1d132c035f4b86e76e4a18bde51, type: 3}
-    - {fileID: 2228037736886391974, guid: 19faa1d132c035f4b86e76e4a18bde51, type: 3}
+    - {fileID: 6417244348779880327, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: -2197864050038063627, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: -2744768363328942126, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: 105135283509378702, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: 6568531240022346211, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: 7074226883472064701, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
+    - {fileID: 3053847995365121007, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     frameTags: []
     frameRate: 8
     loop: 0
@@ -340,6 +343,7 @@ MonoBehaviour:
   delay: 1
   CanAttack: 1
   timer: 0
+  animator: {fileID: 7639241219263521851}
   enemies: []
 --- !u!1 &6357974749569766733
 GameObject:

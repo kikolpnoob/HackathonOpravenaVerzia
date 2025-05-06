@@ -16,9 +16,11 @@ public class Boss : MonoBehaviour
     
     public int damage; // TODO: ...
 
-    public float delay = 1;
+    public float delay = 2;
     public bool CanAttack = true;
     public float timer = 0;
+    
+    public SpriteAnimator animator;
     
     public Collider2D[] enemies;
 
@@ -45,6 +47,7 @@ public class Boss : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && CanAttack)
         {
+            animator.PlayAnimation("Attack1");
             enemies = Physics2D.OverlapCircleAll(GetSwingPosition(), meeleAttackRadius, enemyLayerMask); // Toto nejde ... stale to je null
             CanAttack = false;
             if (enemies != null)
