@@ -1,9 +1,12 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Hero : MonoBehaviour
 {
+    public MMF_Player damagedFeedbacks;
+    public new SpriteRenderer renderer;
     int health;
     public int maxHealth;
     public float movementSpeed;
@@ -35,6 +38,7 @@ public abstract class Hero : MonoBehaviour
 
     protected virtual void UpdateLogic()
     {
+        FlipRenderer();
         if (isUsingAction)
             return;
         _stamina = Mathf.Clamp(_stamina + Time.fixedDeltaTime * 100, float.MaxValue, 0);
@@ -54,6 +58,10 @@ public abstract class Hero : MonoBehaviour
         else if (dist > maxDistanceFromPlayer)
             rb.AddForce(_directionToPlayer * movementSpeed * rb.mass);
     }
+    protected virtual void FlipRenderer()
+    {
+        renderer.flipX = Vector2.Dot(_directionToPlayer, Vector2.right) < 0; 
+    }
     protected virtual void Action()
     {
         // hero specific
@@ -64,6 +72,8 @@ public abstract class Hero : MonoBehaviour
     {
         health = Mathf.Clamp(health + value, 0, maxHealth);
         
+        if (damagedFeedbacks != null)
+            damagedFeedbacks.PlayFeedbacks();
         
         if (health == 0)
             Die();

@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34820e63dac0b884ea273a437318072f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 658779660004114768}
   maxHealth: 100
   movementSpeed: 30
   minDistanceFromPlayer: 4

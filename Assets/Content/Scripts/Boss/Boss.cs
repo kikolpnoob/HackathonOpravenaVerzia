@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,6 +11,7 @@ public class Boss : MonoBehaviour
     public int maxHealth;
     public int xp;
     public static Transform Transform;
+    public MMF_Player feedbackPlayer;
     
     public float meeleAttackRadius;
     public LayerMask enemyLayerMask;
@@ -77,6 +79,8 @@ public class Boss : MonoBehaviour
 
     public void EditHealth(int value)
     {
+        if (value < 0)
+            feedbackPlayer.PlayFeedbacks();
         health = Mathf.Clamp(health + value, 0, maxHealth);
 
         Debug.Log(health);
