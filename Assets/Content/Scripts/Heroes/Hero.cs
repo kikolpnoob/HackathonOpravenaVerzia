@@ -58,13 +58,17 @@ public abstract class Hero : MonoBehaviour
     {
         // hero specific
     }
+    
 
     public void EditHealth(int value)
     {
         health = Mathf.Clamp(health + value, 0, maxHealth);
-
+        
+        
         Debug.Log(health);
         if (health == 0)
-            Destroy(gameObject);
+            Die();
     }
+
+    protected virtual void Die() { }
 }

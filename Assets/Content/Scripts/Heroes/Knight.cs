@@ -11,6 +11,7 @@ public class Knight : Hero
     [Tooltip("Distance of the swing from the hero")]
         public float swingDistance;
     public float swingSelfKnockback;
+    public SpriteAnimator spriteAnimator;
     
 
     protected override void Action()
@@ -20,16 +21,30 @@ public class Knight : Hero
         StartCoroutine(Swing());
     }
 
+    protected override void Die()
+    {
+        StartCoroutine(Dies());
+    }
+
+    private IEnumerator Dies()
+    {
+        spriteAnimator.PlayAnimation("Dead");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
+
     void FixedUpdate()
     {
         UpdateLogic();
+        spriteAnimator.PlayAnimation("Walk");
     }
 
     private IEnumerator Swing()
     {
         Vector2 swingDirection = (Boss.Transform.position - transform.position).normalized;
         Vector2 swingPosition = (Vector2)transform.position + swingDirection;
-        yield return new WaitForSeconds(0.3f);
+        spriteAnimator.PlayAnimation("Attack");
+        yield return new WaitForSeconds(1f);
         Collider2D col = Physics2D.OverlapBox(swingPosition, swingSize, Vector2.Angle(Vector2.up, swingDirection), bossMask);
         if (col != null)
         {

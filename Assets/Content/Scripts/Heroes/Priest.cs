@@ -7,27 +7,41 @@ public class Priest : Hero
 {
     public int healAmount;
     private Hero NearestHero;
-
+    public SpriteAnimator spriteAnimator;
 
     protected override void Action() 
     {
         base.Action();
         isUsingAction = true;
-        Heal(); 
-
+        StartCoroutine(Heal());
     }
 
-    private void Heal()
+    private IEnumerator Heal()
     {
+        spriteAnimator.PlayAnimation("Heal");
+        yield return new WaitForSeconds(1f);
         if (NearestHero != null)
             NearestHero.EditHealth(healAmount);
         
         isUsingAction = false;
     }
+    
+    protected override void Die()
+    {
+        StartCoroutine(Dies());
+    }
+
+    private IEnumerator Dies()
+    {
+        spriteAnimator.PlayAnimation("Dead");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
+    }
 
     void FixedUpdate()
     {
         UpdateLogic();
+        spriteAnimator.PlayAnimation("Walk");
     }
 
     protected override void UpdateLogic()

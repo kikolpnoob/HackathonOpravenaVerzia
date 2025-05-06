@@ -223,7 +223,7 @@ MonoBehaviour:
     - {fileID: 6999947984496013998, guid: d90df1398d3bf9644aa79390dde3d99f, type: 3}
     - {fileID: -606795169624158181, guid: d90df1398d3bf9644aa79390dde3d99f, type: 3}
     frameTags: []
-    frameRate: 8
+    frameRate: 4
     loop: 0
     unstoppable: 1
   - animationName: Attack
@@ -327,6 +327,7 @@ MonoBehaviour:
   swingSize: {x: 1.5, y: 2}
   swingDistance: 2
   swingSelfKnockback: 5
+  spriteAnimator: {fileID: 7639241219263521851}
 --- !u!1 &6357974749569766733
 GameObject:
   m_ObjectHideFlags: 0

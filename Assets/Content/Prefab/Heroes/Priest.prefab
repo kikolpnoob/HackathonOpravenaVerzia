@@ -81,6 +81,7 @@ MonoBehaviour:
   isUsingAction: 0
   actionStaminaCost: 120
   healAmount: 0
+  spriteAnimator: {fileID: 6263829653512481322}
 --- !u!1 &2188285307139706289
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +337,7 @@ MonoBehaviour:
     - {fileID: -7580704639516615134, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
     - {fileID: -6881427664005366358, guid: f49eff4bc009cfe43805a3af0e1b83b7, type: 3}
     frameTags: []
-    frameRate: 8
+    frameRate: 5
     loop: 0
     unstoppable: 1
   - animationName: Heal
