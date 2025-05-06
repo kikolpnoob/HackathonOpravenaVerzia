@@ -112,8 +112,20 @@ MonoBehaviour:
     - {fileID: -7311285497288995999, guid: 89bbe7b4cb7ac804ebf8edd8a1078d5f, type: 3}
     frameTags: []
     frameRate: 6
-    loop: 1
+    loop: 0
     unstoppable: 0
+  - animationName: Dead
+    frames:
+    - {fileID: -6446014624654344547, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    - {fileID: 3109186938332489462, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    - {fileID: -3761059524881590778, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    - {fileID: -5862458259485764450, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    - {fileID: -8722540506807829175, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    - {fileID: 2538235334328061978, guid: ff141e74ff41da34580857fed3feb79c, type: 3}
+    frameTags: []
+    frameRate: 6
+    loop: 0
+    unstoppable: 1
   currentFrameTag: null
 --- !u!1 &548001013434166911
 GameObject:
@@ -273,3 +285,4 @@ MonoBehaviour:
   maxDistanceFromPlayer: 0
   isUsingAction: 0
   actionStaminaCost: 99999
+  spriteAnimator: {fileID: 6980790092301914079}
