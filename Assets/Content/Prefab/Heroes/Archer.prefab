@@ -80,12 +80,12 @@ MonoBehaviour:
   maxDistanceFromPlayer: 4.5
   isUsingAction: 0
   actionStaminaCost: 100
-  animator: {fileID: 0}
+  animator: {fileID: 1726581756804070821}
   damage: 20
   bossMask:
     serializedVersion: 2
     m_Bits: 64
-  arrow: {fileID: 7116834591843732316, guid: 3063c9281fd623f40ba31aee15b05610, type: 3}
+  arrow: {fileID: 5825864692745041378, guid: 3063c9281fd623f40ba31aee15b05610, type: 3}
   arrowSpeed: 5
   swingSelfKnockback: 2.5
 --- !u!1 &2818405931913713687

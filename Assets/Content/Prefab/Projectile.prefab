@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2367449957533476818, guid: 26c12aedfd092a54b99dbf27420520b4, type: 3}
+  m_Sprite: {fileID: 2367449957533476818, guid: f5324ac18b0ec9945ac2c22a50701989, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.65625, y: 0.28125}
+  m_Size: {x: 0.21, y: 0.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1826677489760714990}
   - component: {fileID: 8730491836516419252}
   - component: {fileID: 8257352890344787381}
-  - component: {fileID: 213518947104605936}
+  - component: {fileID: 5825864692745041378}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -195,7 +195,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &213518947104605936
+--- !u!114 &5825864692745041378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5287257126044155100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae11c7f52ec5b3d49b764942b2671aa6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0209f4ebe28376e4cae360fa54186cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   layerMask:
