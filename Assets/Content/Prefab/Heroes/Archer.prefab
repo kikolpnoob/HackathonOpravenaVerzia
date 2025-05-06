@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8875737217525761347
 Transform:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 5420657165879536120, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -221,7 +221,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 658779660004114768}
-  animations: []
+  animations:
+  - animationName: Idle
+    frames:
+    - {fileID: 5420657165879536120, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    - {fileID: 1175301634001196307, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    - {fileID: 997072306785370747, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    - {fileID: -8867738644707455821, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    - {fileID: -8814955541233353855, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    - {fileID: 7477372730292897668, guid: 5d7bdbd1618b8db40b44371ba2be54c8, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Walk
+    frames:
+    - {fileID: -2653111961922523269, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: 1276110046553554427, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: 6671316223615255954, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: -7131107602637537101, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: 7057910378636255025, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: -326703531548617110, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: 7613746122174925275, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    - {fileID: -8952287864160925007, guid: 19911db2be099f74f894a85be46fcba7, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Hit
+    frames:
+    - {fileID: -479144549343746152, guid: 6c37c498773e619419340b5224ef1ebf, type: 3}
+    - {fileID: -9144092880859920769, guid: 6c37c498773e619419340b5224ef1ebf, type: 3}
+    - {fileID: -1294198657845372363, guid: 6c37c498773e619419340b5224ef1ebf, type: 3}
+    - {fileID: 5832391082227068111, guid: 6c37c498773e619419340b5224ef1ebf, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
+  - animationName: Dead
+    frames:
+    - {fileID: 6252289112562784370, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
+    - {fileID: 7079608716009639939, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
+    - {fileID: -7643844325916662381, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
+    - {fileID: -7055058324540839214, guid: 5b3eec509867f6a45aae08b56cc591cc, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
+  - animationName: Attack
+    frames:
+    - {fileID: -4969225072168162266, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -3815940653392281268, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -2159089512590075460, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: 21099746009664023, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -3892745761945488508, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: 2613844047449293589, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -3563666022125821102, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -6253380771555142468, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    - {fileID: -2542026682434453248, guid: e2fa7c57b1625c34fb6bab4a970eae5f, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
   currentFrameTag: null
 --- !u!1 &7708462504244517177
 GameObject:
