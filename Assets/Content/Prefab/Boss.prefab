@@ -232,7 +232,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  damage: 10
+  damage: 100
   delay: 0.5
   CanAttack: 1
   timer: 0
