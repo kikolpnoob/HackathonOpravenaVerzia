@@ -8,60 +8,61 @@ using UnityEngine.UI;
 public class AbilityChoice : MonoBehaviour
 {
     [System.Serializable]
-    public class Abilities
-    {
-        public Sprite abilityIcon;
-        public string abilityName;
-        public string manaCost;
-        public string abilityDescription;
-    }
-
-    [System.Serializable]
-    public class Carts
+    public struct Carts
     {
         public Image cartIcon;
         public TMP_Text cartName;
         public TMP_Text cartManaCost;
         public TMP_Text cartDescription;
     }
-    
-    [Header("Abilities Information")]
-    public List<Abilities> AbilitieInfo;
-    
      [Header("UI Elements")]
     public GameObject selectUI;
     public List<Carts> CartsList;
 
-    public void ClickOnStart()
+    public void ActivateAbilityChoise()
     {
         selectUI.SetActive(true);
-        RandomSetAbility();
-    }
-
-    void RandomSetAbility()
-    {
-        List<Abilities> tempList = new List<Abilities>(AbilitieInfo);
-
-        for (int i = 0; i < CartsList.Count; i++)
+        List<Ability> randomAbilities = RandomSetAbility();
+        for (int i = 0; i < 3; i++)
         {
-            int randomIndex = UnityEngine.Random.Range(0, tempList.Count);
-            Abilities selected = tempList[randomIndex];
-
-            Carts cart = CartsList[i];
-            
-            cart.cartIcon.sprite = selected.abilityIcon;
-            cart.cartName.text = selected.abilityName;
-            cart.cartManaCost.text = selected.manaCost;
-            cart.cartDescription.text = selected.abilityDescription;
-            
-
-            tempList.RemoveAt(randomIndex);
+            CartsList[i].cartName.text = randomAbilities[i].name;
+            CartsList[i].cartManaCost.text = randomAbilities[i].manaCost.ToString();
+            CartsList[i].cartDescription.text = randomAbilities[i].description;
+            // TODO: ICON
         }
+    }   
+
+    public List<Ability> RandomSetAbility()
+    {
+        List<Ability> randomAbilities = new List<Ability>();
+        bool hasOwned = false;
+        foreach (Ability ability in AbilityManager.allAbilities_R)
+        {
+            foreach (Ability ownedAbility in AbilityManager.ownedAbilities_R)
+            {
+                if (ability == ownedAbility)
+                {
+                    hasOwned = true;
+                    break;
+                }
+            }
+            
+            if (hasOwned)
+                continue;
+
+            if (randomAbilities.Count >= 3) 
+                break;
+            
+            randomAbilities.Add(ability);
+        }
+        
+        return randomAbilities;
     }
 
-     public void OnButtonClick()
+    public void ChooseAbility(Ability ability)
     {
-        GameObject clicked = EventSystem.current.currentSelectedGameObject;
+        AbilityManager.ownedAbilities_R.Add(ability);
+        selectUI.SetActive(false);
     }
     
     
