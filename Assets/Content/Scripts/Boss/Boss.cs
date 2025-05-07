@@ -1,5 +1,7 @@
 using MoreMountains.Feedbacks;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -74,8 +76,10 @@ public class Boss : MonoBehaviour
     
     private void OnDrawGizmosSelected()
     {
+#if UNITY_EDITOR
         Handles.color = Color.red;
         Handles.DrawWireDisc(GetSwingPosition(), Vector3.forward, meeleAttackRadius);
+#endif
     }
 
     public void EditHealth(int value)
