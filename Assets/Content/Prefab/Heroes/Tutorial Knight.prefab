@@ -208,9 +208,6 @@ MonoBehaviour:
     unstoppable: 0
   - animationName: Attack1
     frames:
-    - {fileID: 6417244348779880327, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
-    - {fileID: -2197864050038063627, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
-    - {fileID: -2744768363328942126, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 105135283509378702, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 6568531240022346211, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 7074226883472064701, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
@@ -231,9 +228,6 @@ MonoBehaviour:
     unstoppable: 1
   - animationName: Attack
     frames:
-    - {fileID: 6417244348779880327, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
-    - {fileID: -2197864050038063627, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
-    - {fileID: -2744768363328942126, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 105135283509378702, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 6568531240022346211, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
     - {fileID: 7074226883472064701, guid: 1db627e166c7e26428281e8152da75fc, type: 3}
@@ -341,7 +335,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   damage: 50
-  delay: 1
+  delay: 0.625
   CanAttack: 1
   timer: 0
   animator: {fileID: 7639241219263521851}
