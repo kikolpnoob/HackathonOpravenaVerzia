@@ -3,6 +3,7 @@ using MoreMountains.Feedbacks;
 using UnityEditor;
 #endif
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Serialization;
 
 
@@ -28,6 +29,8 @@ public class Boss : MonoBehaviour
     public SpriteAnimator animator;
     
     public Collider2D[] enemies;
+
+    public AudioResource classicAttack;
     
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class Boss : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && CanAttack)
         {
+            AudioManager.SpawnAudio(classicAttack);
             animator.PlayAnimation("Attack1");
             enemies = Physics2D.OverlapCircleAll(GetSwingPosition(), meeleAttackRadius, enemyLayerMask); // Toto nejde ... stale to je null
             CanAttack = false;

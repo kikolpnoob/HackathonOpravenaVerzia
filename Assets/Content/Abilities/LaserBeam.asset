@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925334c42aa707f4092b8486e70d33e9, type: 3}
   m_Name: LaserBeam
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  manaCost: 0
+  name: Laser Beam
+  description: Spawn a laser with super strong damage
+  manaCost: 80
   isActive: 0
+  laserBeam: {fileID: 0}
+  sound: {fileID: 8300000, guid: a319b0745086aa742bb7c8d39bf0c5c4, type: 3}

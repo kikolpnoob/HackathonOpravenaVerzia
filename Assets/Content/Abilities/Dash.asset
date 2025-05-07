@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Dash
   m_EditorClassIdentifier: 
   name: Dash
-  description: ...
-  manaCost: 10
+  description: Dash to your direction, and hits all enemies in the way.
+  manaCost: 35
   isActive: 0
   rigidBody: {fileID: 0}
   damageOnContact: {fileID: 0}
+  bossCollider: {fileID: 0}
+  movement: {fileID: 0}
   dashVel: 40
   damage: 50
   damageDuration: 0.2
+  audio: {fileID: 8300000, guid: 7b969159a7f9d0342903be318cab5da7, type: 3}

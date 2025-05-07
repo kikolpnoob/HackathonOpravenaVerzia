@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [CreateAssetMenu(fileName = "Ability", menuName = "Abilities/Dash")]
 public class DashAbility : Ability
@@ -11,11 +12,12 @@ public class DashAbility : Ability
     public float dashVel;
     public int damage;
     public float damageDuration = 0.2f;  // how long you want to deal damage after dash starts
+    public AudioResource audio;
 
     public override void UseAbility()
     {
         base.UseAbility();
-        
+        AudioManager.SpawnAudio(audio);
         rigidBody.linearVelocity = GetMouseDirection() * dashVel;
 
         damageOnContact.damage = damage;

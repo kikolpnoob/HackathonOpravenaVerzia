@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e570b547b88341e893797a0296179968, type: 3}
   m_Name: SummonMinions
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  manaCost: 0
+  name: Summon Minion
+  description: This abillity summons a minions that helps you kill enemys
+  manaCost: 70
   isActive: 0
   MinionPrefab: {fileID: 8650126752144799626, guid: 1e4e19b9e682f634fa3429847585ddb3, type: 3}
+  MinionAudio: {fileID: 8300000, guid: 1b8e2ad289bcb9d49bfc775b6b723518, type: 3}

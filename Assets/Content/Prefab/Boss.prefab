@@ -355,6 +355,7 @@ MonoBehaviour:
   timer: 0
   animator: {fileID: 3325678046520548562}
   enemies: []
+  classicAttack: {fileID: 8300000, guid: 6c2b74b50994e1a40bc3a65909019488, type: 3}
 --- !u!114 &8386741214737507690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +418,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 88cf658d189eed7459d612537d78dc4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -492,7 +493,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0

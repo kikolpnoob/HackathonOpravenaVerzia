@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: GroundSlam
   m_EditorClassIdentifier: 
   name: Grounds slam
-  description: ...
-  manaCost: 0
+  description: Make strong damage to enemies nearby.
+  manaCost: 50
   isActive: 0
+  rigidbody: {fileID: 0}
+  sound: {fileID: 8300000, guid: 69fcb4039b9803c41a9abae4f0d75073, type: 3}
