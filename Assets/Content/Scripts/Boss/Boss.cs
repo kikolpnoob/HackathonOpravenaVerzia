@@ -35,7 +35,8 @@ public class Boss : MonoBehaviour
     
     private void Update()
     {
-     
+        if (GameController.state == GameState.Gameplay)
+            cameraFocuesTransform.position = Vector2.Lerp(cameraFocuesTransform.position, (Vector2)transform.position + (GetMousePosition() - (Vector2)transform.position) * 0.2f, Time.deltaTime * 8);
         if (!CanAttack)
         {
             timer += Time.deltaTime;
