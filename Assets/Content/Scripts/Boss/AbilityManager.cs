@@ -15,9 +15,7 @@ public class AbilityManager : MonoBehaviour
     }
     [SerializeField] AbilityParams abilityParams;
     public List<Ability> ownedAbilities = new List<Ability>();
-    public static List<Ability> ownedAbilities_R = new List<Ability>();
     public List<Ability> allAbilities = new List<Ability>();
-    public static List<Ability> allAbilities_R = new List<Ability>();
 
     public float mana;
     public int maxMana;
@@ -45,10 +43,6 @@ public class AbilityManager : MonoBehaviour
 
         if (ownedAbilities == null)
             ownedAbilities = new List<Ability>();
-        ownedAbilities.Add(allAbilities[0]);
-
-        allAbilities_R = allAbilities;
-        ownedAbilities_R = ownedAbilities;
     }
 
 
@@ -62,8 +56,6 @@ public class AbilityManager : MonoBehaviour
                 CheckAbilityActivation(i);
             }
         }
-        
-        ownedAbilities = ownedAbilities_R;
     }
 
     private void CheckAbilityActivation(int i)

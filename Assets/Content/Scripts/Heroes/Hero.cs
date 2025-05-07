@@ -110,6 +110,14 @@ public abstract class Hero : MonoBehaviour
 
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        try
+        {
+            GameController.AddEXP(20);
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
     }
 }

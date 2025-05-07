@@ -15,14 +15,15 @@ public class AbilityChoice : MonoBehaviour
         public TMP_Text cartManaCost;
         public TMP_Text cartDescription;
     }
-     [Header("UI Elements")]
+    public AbilityManager abilityManager;
+    [Header("UI Elements")]
     public GameObject selectUI;
     public List<Carts> CartsList;
 
     public void ActivateAbilityChoise()
     {
         selectUI.SetActive(true);
-        List<Ability> randomAbilities = RandomSetAbility();
+        List<Ability> randomAbilities = GetAbilityChoices();
         for (int i = 0; i < 3; i++)
         {
             CartsList[i].cartName.text = randomAbilities[i].name;
@@ -32,28 +33,18 @@ public class AbilityChoice : MonoBehaviour
         }
     }   
 
-    public List<Ability> RandomSetAbility()
+    public List<Ability> GetAbilityChoices()
     {
         List<Ability> randomAbilities = new List<Ability>();
-        bool hasOwned = false;
-        foreach (Ability ability in AbilityManager.allAbilities_R)
+        foreach (Ability potentialAbility in abilityManager.allAbilities)
         {
-            foreach (Ability ownedAbility in AbilityManager.ownedAbilities_R)
-            {
-                if (ability == ownedAbility)
-                {
-                    hasOwned = true;
-                    break;
-                }
-            }
-            
-            if (hasOwned)
+            if (abilityManager.ownedAbilities.Contains(potentialAbility))
                 continue;
 
             if (randomAbilities.Count >= 3) 
                 break;
             
-            randomAbilities.Add(ability);
+            randomAbilities.Add(potentialAbility);
         }
         
         return randomAbilities;
@@ -61,7 +52,7 @@ public class AbilityChoice : MonoBehaviour
 
     public void ChooseAbility(Ability ability)
     {
-        AbilityManager.ownedAbilities_R.Add(ability);
+        abilityManager.ownedAbilities.Add(ability);
         selectUI.SetActive(false);
     }
     
