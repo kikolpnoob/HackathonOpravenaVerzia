@@ -37,4 +37,9 @@ public class AudioManager : MonoBehaviour
         Destroy(g, 3);
         return g;
     }
+
+    public static void SpawnAudio()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class Boss : MonoBehaviour
 {
     int health;
+    public Transform cameraFocuesTransform;
     public int maxHealth;
     public int xp;
     public static Transform Transform;
@@ -25,8 +26,6 @@ public class Boss : MonoBehaviour
     public SpriteAnimator animator;
     
     public Collider2D[] enemies;
-
-
     
     private void Awake()
     {
@@ -36,6 +35,7 @@ public class Boss : MonoBehaviour
     
     private void Update()
     {
+     
         if (!CanAttack)
         {
             timer += Time.deltaTime;

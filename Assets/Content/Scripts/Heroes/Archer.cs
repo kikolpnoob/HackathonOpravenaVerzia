@@ -1,7 +1,9 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
 using Unity.Mathematics;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Archer : Hero
@@ -14,6 +16,7 @@ public class Archer : Hero
     public float swingSelfKnockback;
     public SpriteAnimator spriteAnimator;
 
+    public List<AudioResource> audios = new List<AudioResource>();
     protected override void Action()
     {
         base.Action();
@@ -45,6 +48,8 @@ public class Archer : Hero
         Vector2 bossDirection = (GetNearestTarget().transform.position - transform.position).normalized;
         Vector2 shootPosition = (Vector2)transform.position + bossDirection;
         spriteAnimator.PlayAnimation("Attack");
+        AudioManager.SpawnAudio(audios[0], 5);
+        
         yield return new WaitForSeconds(1f);
         Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward,bossDirection));
         projectile.layerMask = bossMask;
