@@ -6,6 +6,8 @@ using UnityEngine;
 public abstract class Hero : MonoBehaviour
 {
     public MMF_Player damagedFeedbacks;
+    public ParticleSystem deathParticles;
+
     public new SpriteRenderer renderer;
     int health;
     public int maxHealth;

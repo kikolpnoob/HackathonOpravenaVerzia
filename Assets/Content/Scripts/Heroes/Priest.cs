@@ -35,6 +35,7 @@ public class Priest : Hero
     {
         rb.linearDamping = 18;
         spriteAnimator.PlayAnimation("Dead");
+        Instantiate(deathParticles, transform.position, Quaternion.identity, null).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }

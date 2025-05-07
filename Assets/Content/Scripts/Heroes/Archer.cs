@@ -1,4 +1,6 @@
 using System.Collections;
+using MoreMountains.Feedbacks;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,7 +13,6 @@ public class Archer : Hero
     public float arrowSpeed;
     public float swingSelfKnockback;
     public SpriteAnimator spriteAnimator;
-
 
     protected override void Action()
     {
@@ -34,6 +35,7 @@ public class Archer : Hero
     {
         rb.linearDamping = 18;
         spriteAnimator.PlayAnimation("Dead");
+        Instantiate(deathParticles, transform.position, Quaternion.identity, null).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }

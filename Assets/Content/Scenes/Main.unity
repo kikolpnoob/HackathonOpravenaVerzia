@@ -101358,6 +101358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1174982865547905772}
   - component: {fileID: 269856964738206618}
+  - component: {fileID: 8683687834378737970}
   m_Layer: 0
   m_Name: Tutorial Knight
   m_TagString: Untagged
@@ -101365,6 +101366,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8683687834378737970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683687834378737969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be80dcddb30f5749b8df3b52b41c3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathBlood: {fileID: 7999060549955951215, guid: 580d80fbcf12434488f1605ae2c45141, type: 3}
 --- !u!4 &8727037321431939314
 Transform:
   m_ObjectHideFlags: 0
