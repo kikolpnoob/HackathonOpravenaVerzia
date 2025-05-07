@@ -23,4 +23,4 @@ MonoBehaviour:
   dashVel: 40
   damage: 50
   damageDuration: 0.2
-  audio: {fileID: 8300000, guid: 7b969159a7f9d0342903be318cab5da7, type: 3}
+  audio: {fileID: 8300000, guid: a8aece67519ecf14eb7dddfc661f143a, type: 3}

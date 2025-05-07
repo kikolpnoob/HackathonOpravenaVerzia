@@ -10,6 +10,8 @@ using UnityEngine.Serialization;
 
 public class Boss : MonoBehaviour
 {
+    public GameObject deadScreen;
+    
     int health;
     public Transform cameraFocuesTransform;
     public int maxHealth;
@@ -94,6 +96,9 @@ public class Boss : MonoBehaviour
 
         Debug.Log(health);
         if (health == 0)
+        {
             Destroy(gameObject); // gameOver
+            deadScreen.SetActive(true);
+        }
     }
 }
