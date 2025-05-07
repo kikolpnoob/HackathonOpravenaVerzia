@@ -452,6 +452,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7436646262069463992, guid: 7d2fb7b5db592014d9e8a879a844702a, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 254ebb6cac2fb50499160e20878a954a, type: 3}
+    - target: {fileID: 7436646262069463992, guid: 7d2fb7b5db592014d9e8a879a844702a, type: 3}
       propertyPath: damagedFeedbacks
       value: 
       objectReference: {fileID: 2054545869}
@@ -542,11 +546,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedFeedbacks: {fileID: 0}
+  deathParticles: {fileID: 0}
   renderer: {fileID: 0}
   maxHealth: 100
   movementSpeed: 30
   minDistanceFromPlayer: 4
   maxDistanceFromPlayer: 4.5
+  radius: 0
   isUsingAction: 0
   actionStaminaCost: 100
   animator: {fileID: 0}
@@ -558,6 +564,8 @@ MonoBehaviour:
   arrowSpeed: 5
   swingSelfKnockback: 2.5
   spriteAnimator: {fileID: 0}
+  audios: []
+  deadSound: {fileID: 0}
 --- !u!212 &582031624 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2436412191991922880, guid: f3bf9ff5911e5b74c9b3eff4d4bfaefd, type: 3}
@@ -670,15 +678,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedFeedbacks: {fileID: 0}
+  deathParticles: {fileID: 0}
   renderer: {fileID: 0}
   maxHealth: 100
   movementSpeed: 25
   minDistanceFromPlayer: 5.5
   maxDistanceFromPlayer: 6
+  radius: 0
   isUsingAction: 0
   actionStaminaCost: 120
   healAmount: 0
   spriteAnimator: {fileID: 0}
+  audio: {fileID: 0}
+  deadSound: {fileID: 0}
 --- !u!1 &1083050173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2625070570273501656, guid: e178531f4b09aa841a48388bde929c5a, type: 3}
@@ -1664,11 +1676,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedFeedbacks: {fileID: 0}
+  deathParticles: {fileID: 0}
   renderer: {fileID: 0}
   maxHealth: 100
   movementSpeed: 25
   minDistanceFromPlayer: 1.5
   maxDistanceFromPlayer: 3
+  radius: 0
   isUsingAction: 0
   actionStaminaCost: 70
   damage: 0
@@ -1679,6 +1693,8 @@ MonoBehaviour:
   swingDistance: 2
   swingSelfKnockback: 5
   spriteAnimator: {fileID: 0}
+  audio: {fileID: 0}
+  deadSound: {fileID: 0}
 --- !u!1001 &1725801095
 PrefabInstance:
   m_ObjectHideFlags: 0

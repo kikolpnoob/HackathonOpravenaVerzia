@@ -333,6 +333,8 @@ MonoBehaviour:
   swingDistance: 2
   swingSelfKnockback: 5
   spriteAnimator: {fileID: 7639241219263521851}
+  audio: {fileID: 8300000, guid: 5faffdaa6893b3446bd900292325094d, type: 3}
+  deadSound: {fileID: 8300000, guid: 52a9496795eb762458f330aa9c91580b, type: 3}
 --- !u!114 &8684066781783899514
 MonoBehaviour:
   m_ObjectHideFlags: 0

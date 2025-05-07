@@ -31,10 +31,9 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        AudioManager.SpawnAudio(shotSound, 5);
+        
         if ((layerMask.value & (1 << other.gameObject.layer)) != 0) // if layerMask contains triggerEnter objects layer
         {
-            
             other.GetComponentInParent<Boss>()?.EditHealth(-damage);
             other.GetComponentInParent<Hero>()?.EditHealth(-damage);
 

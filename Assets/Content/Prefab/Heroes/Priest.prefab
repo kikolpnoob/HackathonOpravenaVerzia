@@ -87,6 +87,8 @@ MonoBehaviour:
   actionStaminaCost: 120
   healAmount: 0
   spriteAnimator: {fileID: 6263829653512481322}
+  audio: {fileID: 0}
+  deadSound: {fileID: 8300000, guid: 52a9496795eb762458f330aa9c91580b, type: 3}
 --- !u!114 &6617594226955593869
 MonoBehaviour:
   m_ObjectHideFlags: 0

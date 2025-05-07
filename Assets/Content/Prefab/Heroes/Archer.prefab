@@ -94,6 +94,10 @@ MonoBehaviour:
   arrowSpeed: 5
   swingSelfKnockback: 2.5
   spriteAnimator: {fileID: 1726581756804070821}
+  audios:
+  - {fileID: 8300000, guid: 40f22352a1defd245b2e459113f4fc72, type: 3}
+  - {fileID: 8300000, guid: c1fd8fd25197c0f4c8c495f409298d86, type: 3}
+  deadSound: {fileID: 8300000, guid: 52a9496795eb762458f330aa9c91580b, type: 3}
 --- !u!114 &725799581944586173
 MonoBehaviour:
   m_ObjectHideFlags: 0

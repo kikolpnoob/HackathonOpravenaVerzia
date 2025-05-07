@@ -17,6 +17,8 @@ public class Archer : Hero
     public SpriteAnimator spriteAnimator;
 
     public List<AudioResource> audios = new List<AudioResource>();
+    public AudioResource deadSound;
+    
     protected override void Action()
     {
         base.Action();
@@ -37,6 +39,7 @@ public class Archer : Hero
     private IEnumerator Dies()
     {
         rb.linearDamping = 18;
+        AudioManager.SpawnAudio(deadSound);
         spriteAnimator.PlayAnimation("Dead");
         Instantiate(deathParticles, transform.position, Quaternion.identity, null).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -52,6 +55,7 @@ public class Archer : Hero
         
         yield return new WaitForSeconds(1f);
         Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward,bossDirection));
+        AudioManager.SpawnAudio(audios[1], 5);
         projectile.layerMask = bossMask;
         projectile.damage = damage;
         projectile.speed = arrowSpeed;

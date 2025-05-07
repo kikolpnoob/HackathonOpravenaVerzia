@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Priest : Hero
@@ -8,6 +9,8 @@ public class Priest : Hero
     public int healAmount;
     private Hero NearestHero;
     public SpriteAnimator spriteAnimator;
+    public AudioResource audio;
+    public AudioResource deadSound;
 
     protected override void Action() 
     {
@@ -18,6 +21,7 @@ public class Priest : Hero
 
     private IEnumerator Heal()
     {
+        AudioManager.SpawnAudio(audio, 1);
         spriteAnimator.PlayAnimation("Heal");
         yield return new WaitForSeconds(1f);
         if (NearestHero != null)
@@ -34,6 +38,7 @@ public class Priest : Hero
     private IEnumerator Dies()
     {
         rb.linearDamping = 18;
+        AudioManager.SpawnAudio(deadSound);
         spriteAnimator.PlayAnimation("Dead");
         Instantiate(deathParticles, transform.position, Quaternion.identity, null).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
