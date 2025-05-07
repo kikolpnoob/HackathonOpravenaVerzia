@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour
 
 
     
-    private void Start()
+    private void Awake()
     {
         Transform = transform;
         health = maxHealth;
