@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-art-halloween-skull-head-elemenet-3-png_0: 1167618198239306176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

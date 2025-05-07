@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Minion : MonoBehaviour
@@ -10,21 +12,28 @@ public class Minion : MonoBehaviour
 
     public LayerMask enemyMask;
     private Transform enemyToFollow;
+    private Collider2D enemy;
+    
+    int health;
+    public int maxHealth;
 
+    public SpriteAnimator animator;
 
     [Header("Attacks")]
     public float AttackDelay;
     public float timer;
     public bool CanAttack = true;
+    public int damage;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
     }
 
     public void Update()
     {
-        if (GetEnnemyInRange())
+        if (GetEnemyInRange())
         {
             FollowEnemy();
         }
@@ -51,10 +60,12 @@ public class Minion : MonoBehaviour
 
         if (dirToBoss.magnitude > stopDistance)
         {
+            animator.PlayAnimation("Walk");
             rb.AddForce(dirToBoss.normalized * speed);
         }
         else
         {
+            animator.PlayAnimation("Idle");
             rb.linearVelocity = Vector2.zero;
         }
     }
@@ -63,6 +74,7 @@ public class Minion : MonoBehaviour
     {
         if (enemyToFollow != null)
         {
+            
             Vector2 dirToEnemy = enemyToFollow.position - transform.position;
 
             if (dirToEnemy.magnitude > stopDistance)
@@ -72,33 +84,67 @@ public class Minion : MonoBehaviour
             else
             {
                 rb.linearVelocity = Vector2.zero;
-                AttackEnemy();
+                animator.PlayAnimation("Idle");
+                if (!isInCoroutine) 
+                    StartCoroutine(AttackEnemy());
             }
         }
     }
 
-    public void AttackEnemy()
+    private bool isInCoroutine; 
+    public IEnumerator AttackEnemy()
     {   
-        if(CanAttack)
-        {
-            CanAttack = false;
-            Debug.Log("Deal damage to hero");
-        }
+        isInCoroutine = true;
+            animator.PlayAnimation("Attack");
+            yield return new WaitForSeconds(0.5f);
+
+            if (enemy != null)
+            {
+                enemy.gameObject.GetComponentInParent<Hero>().EditHealth(-damage);
+            }
+
+            isInCoroutine = false;
     }
 
-    public bool GetEnnemyInRange()
+    public bool GetEnemyInRange()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, Range, enemyMask);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, Range, enemyMask);
+        Collider2D hit = null;
+        
+        if (hits.Length > 0) 
+            hit = hits[0];
+        
+
+        foreach (Collider2D hitForeach in hits)
+        {
+            if (Vector2.Distance(transform.position, hitForeach.transform.position) < Vector2.Distance(transform.position, hit.transform.position))
+            {
+                hit = hitForeach;
+            }
+        }
 
         if (hit != null)
         {
-            Debug.Log("Hit: " + hit.name);
             enemyToFollow = hit.transform;
+            enemy = hit.GetComponent<Collider2D>();
             return true;
         }
         enemyToFollow = null;
         return false;
     }
+    public void EditHealth(int value)
+    {
+        health = Mathf.Clamp(health + value, 0, maxHealth);
+        
+        if (health == 0)
+            Die();
+    }
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
+    }
+    
 
     void OnDrawGizmos()
     {

@@ -74,11 +74,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb7c2f3e028d4f4496ad03872df9878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagedFeedbacks: {fileID: 0}
   renderer: {fileID: 3992376911557017438}
   maxHealth: 100
   movementSpeed: 25
   minDistanceFromPlayer: 5.5
   maxDistanceFromPlayer: 6
+  radius: 100
   isUsingAction: 0
   actionStaminaCost: 120
   healAmount: 0

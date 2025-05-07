@@ -6,6 +6,7 @@ public class Dummy : Hero
     public SpriteAnimator spriteAnimator;
     protected override void Die()
     {
+        TutorialController.DummyDied();
         StartCoroutine(Dies());
     }
 

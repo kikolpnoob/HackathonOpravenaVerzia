@@ -40,11 +40,11 @@ public class Archer : Hero
 
     private IEnumerator Shoot()
     {
-        Vector2 bossDirection = (Boss.Transform.position - transform.position).normalized;
+        Vector2 bossDirection = (GetNearestTarget().transform.position - transform.position).normalized;
         Vector2 shootPosition = (Vector2)transform.position + bossDirection;
         spriteAnimator.PlayAnimation("Attack");
         yield return new WaitForSeconds(1f);
-        Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward,     bossDirection));
+        Projectile projectile = Instantiate(arrow, shootPosition, Quaternion.LookRotation(-Vector3.forward,bossDirection));
         projectile.layerMask = bossMask;
         projectile.damage = damage;
         projectile.speed = arrowSpeed;

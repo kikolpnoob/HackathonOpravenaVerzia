@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5380271732590795867}
   - component: {fileID: 3865504520148292240}
   - component: {fileID: 7469979269361626811}
-  m_Layer: 0
+  - component: {fileID: 8625767458455201222}
+  m_Layer: 6
   m_Name: Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 5120410236738981136, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3865504520148292240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,14 +131,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Range: 6.19
-  stopDistance: 1.15
+  Range: 5.86
+  stopDistance: 1.3
   enemyMask:
     serializedVersion: 2
     m_Bits: 8
-  AttackDelay: 1
+  maxHealth: 60
+  animator: {fileID: 8625767458455201222}
+  AttackDelay: 2
   timer: 0
   CanAttack: 1
+  damage: 20
 --- !u!58 &7469979269361626811
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -174,3 +178,55 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.50000006
+--- !u!114 &8625767458455201222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650126752144799626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ca4362c052a404ab177bc701b0ab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8941937512612086052}
+  animations:
+  - animationName: Idle
+    frames:
+    - {fileID: 5120410236738981136, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    - {fileID: 1133040411461804861, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    - {fileID: -5096723200824463030, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    - {fileID: -2225174341924067898, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    - {fileID: -8233152129326895834, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    - {fileID: -4010699835880829198, guid: 6a57386537df3d9468ec9647f01bce55, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Walk
+    frames:
+    - {fileID: 9081233426807069, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: 4372957803809224375, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: -1347736431781377632, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: -5659425469639183808, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: -60962372088672916, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: 3404994825279768155, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: -8575848986319331806, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    - {fileID: -4323655612262110637, guid: 42f5c82f42bdb4d4e84868e657b2cf1a, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 0
+  - animationName: Attack
+    frames:
+    - {fileID: -5747784035168019909, guid: df3098ecd6b0e4c4d86d4345ccd69be0, type: 3}
+    - {fileID: 8196637821053982142, guid: df3098ecd6b0e4c4d86d4345ccd69be0, type: 3}
+    - {fileID: 6854456305891230957, guid: df3098ecd6b0e4c4d86d4345ccd69be0, type: 3}
+    - {fileID: -3441655991679628507, guid: df3098ecd6b0e4c4d86d4345ccd69be0, type: 3}
+    - {fileID: 1149191044335307846, guid: df3098ecd6b0e4c4d86d4345ccd69be0, type: 3}
+    frameTags: []
+    frameRate: 8
+    loop: 0
+    unstoppable: 1
+  currentFrameTag: null

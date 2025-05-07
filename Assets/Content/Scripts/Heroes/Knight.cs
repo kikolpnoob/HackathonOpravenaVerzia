@@ -42,14 +42,17 @@ public class Knight : Hero
 
     private IEnumerator Swing()
     {
-        Vector2 swingDirection = (Boss.Transform.position - transform.position).normalized;
+        Vector2 swingDirection = (GetNearestTarget().transform.position - transform.position).normalized;
         Vector2 swingPosition = (Vector2)transform.position + swingDirection;
         spriteAnimator.PlayAnimation("Attack");
         yield return new WaitForSeconds(0.375f);
         Collider2D col = Physics2D.OverlapBox(swingPosition, swingSize, Vector2.Angle(Vector2.up, swingDirection), bossMask);
         if (col != null)
         {
-            col.GetComponentInParent<Boss>().EditHealth(-damage);
+            if(col.GetComponentInParent<Boss>())
+                col.GetComponentInParent<Boss>().EditHealth(-damage);
+            if(col.GetComponentInParent<Minion>())
+                col.GetComponentInParent<Minion>().EditHealth(-damage);
             // Debug.Log("Hit da boss");
         }
         rb.AddForce(-swingDirection * swingSelfKnockback * rb.mass, ForceMode2D.Impulse);

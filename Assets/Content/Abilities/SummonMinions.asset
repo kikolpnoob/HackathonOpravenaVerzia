@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 
   manaCost: 0
   isActive: 0
-  MinionPrefab: {fileID: 0}
+  MinionPrefab: {fileID: 8650126752144799626, guid: 1e4e19b9e682f634fa3429847585ddb3, type: 3}

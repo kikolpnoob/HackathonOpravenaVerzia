@@ -14,12 +14,9 @@ public abstract class Hero : MonoBehaviour
     public float minDistanceFromPlayer;
     public float maxDistanceFromPlayer;
 
-    public bool isIdealDistance { get { float f = _distanceFromPlayer; return f > minDistanceFromPlayer && f < maxDistanceFromPlayer; } }
-
-    protected float _distanceFromPlayer { get { return Vector2.Distance(Boss.Transform.position, transform.position); } }
-    protected Vector2 _directionToPlayer { get { return (Boss.Transform.position - transform.position).normalized; } }
     protected Rigidbody2D rb;
-
+    [SerializeField] protected float radius;
+    
     public bool isUsingAction;
 
     public float actionStaminaCost;
@@ -27,14 +24,44 @@ public abstract class Hero : MonoBehaviour
     [Header("Hero specific values")]
     float _stamina;
 
+    private LayerMask targetMask;
+    
+    public GameObject GetNearestTarget()
+    {
+        GameObject nearestTarget = null;
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, targetMask);
+        foreach (Collider2D target in targets)
+        {
+            if (nearestTarget == null)
+                nearestTarget = target.gameObject;
+            else if (Vector2.Distance(transform.position, target.transform.position) <
+                     Vector2.Distance(transform.position, nearestTarget.transform.position))
+            {
+                nearestTarget = target.gameObject;
+            }
+        }
+        
+        return nearestTarget;
+    }
+    
+    
+    public bool isIdealDistance { get { float f = _distanceFromPlayer; return f > minDistanceFromPlayer && f < maxDistanceFromPlayer; } }
+
+    protected float _distanceFromPlayer { get { return Vector2.Distance(GetNearestTarget().transform.position, transform.position); } }
+    protected Vector2 _directionToPlayer { get { return (GetNearestTarget().transform.position - transform.position).normalized; } }
+    
+  
 
     void Awake()
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        targetMask = LayerMask.GetMask("Boss");
     }
 
-    void FixedUpdate() { }
+    void FixedUpdate()
+    {
+    }
 
     protected virtual void UpdateLogic()
     {
