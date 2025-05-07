@@ -36,6 +36,7 @@ public class Boss : MonoBehaviour
     
     private void Awake()
     {
+        Time.timeScale = 1;
         Transform = transform;
         health = maxHealth;
     }
@@ -97,8 +98,8 @@ public class Boss : MonoBehaviour
         Debug.Log(health);
         if (health == 0)
         {
-            Destroy(gameObject); // gameOver
             deadScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

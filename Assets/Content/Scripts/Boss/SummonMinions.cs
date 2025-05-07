@@ -10,7 +10,7 @@ public class SummonMinions : Ability
     public override void UseAbility()
     {
         base.UseAbility();
-        AudioManager.SpawnAudio(MinionAudio);
+        // AudioManager.SpawnAudio(MinionAudio);
         Object.Instantiate(MinionPrefab, Boss.Transform.position, Quaternion.identity);
     }
 

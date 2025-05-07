@@ -33,6 +33,7 @@ public class Archer : Hero
     
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(Dies());
     }
 

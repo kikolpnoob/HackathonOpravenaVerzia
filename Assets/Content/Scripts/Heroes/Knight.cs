@@ -25,6 +25,7 @@ public class Knight : Hero
 
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(Dies());
     }
 

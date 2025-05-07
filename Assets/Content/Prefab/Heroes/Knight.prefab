@@ -325,7 +325,7 @@ MonoBehaviour:
   radius: 100
   isUsingAction: 0
   actionStaminaCost: 70
-  damage: 0
+  damage: 50
   bossMask:
     serializedVersion: 2
     m_Bits: 64

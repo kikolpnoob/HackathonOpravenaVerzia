@@ -5,6 +5,7 @@ using MyBox;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 
 public enum GameState
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
     }
     public HeroPrefabs heroPrefabs;
     public static GameState state { get; private set; }
-    public static bool abilityChoice;
+    public static bool AbilityChoice;
     public TMP_Text clickToPlayText;
     public Transform DummyKnight;
     public Transform DummyKnightTargetPoint;
@@ -33,6 +34,8 @@ public class GameController : MonoBehaviour
     public Boss bossScript;
     public Movement movement;
     public Camera mainCamera;
+    public AbilityChoice abilityChoice;
+    public Slider expSlider;
     [Header("Gameplay variables")]
     public int xpPerLevel;
     static int _Level;
@@ -42,7 +45,6 @@ public class GameController : MonoBehaviour
     [SerializeField, ReadOnly] private float difficultyMod;
     public Tilemap tilemap;
     public LayerMask wallMask;
-    float spawnMargin = 1f;
 
     // Vector2 GetOffscreenSpawn(int side)
     // {
@@ -119,8 +121,8 @@ public class GameController : MonoBehaviour
         while (tries < 10)
         {
             // Pick a random cell inside bounds
-            int x = UnityEngine.Random.Range(bounds.xMin, bounds.xMax);
-            int y = UnityEngine.Random.Range(bounds.yMin, bounds.yMax);
+            int x = UnityEngine.Random.Range(bounds.xMin+2, bounds.xMax-2);
+            int y = UnityEngine.Random.Range(bounds.yMin+2, bounds.yMax-2);
             Vector3Int randomCell = new Vector3Int(x, y, 0);
 
             // Convert to world position (center of the tile)
@@ -165,11 +167,13 @@ public class GameController : MonoBehaviour
             case GameState.Paused:
                 break;
         }
+        expSlider.value = _XP;
+        expSlider.maxValue = (_Level+1) * xpPerLevel;
     }
 
     private void Gameplay()
     {
-        if (_XP == (_Level+1) * xpPerLevel)
+        if (_XP >= (_Level+1) * xpPerLevel)
             LevelUp();
         difficultyMod += Time.deltaTime * 0.05f;
         SpawningLogic();
@@ -228,17 +232,20 @@ public class GameController : MonoBehaviour
 
     private void LevelUp()
     {
-        abilityChoice = true;
+        abilityChoice.ActivateAbilityChoise();
+        AbilityChoice = true;
         _XP = 0;
         Time.timeScale = 0;
+        _Level++;
         state = GameState.Upgrade;
     }
 
     private void Upgrade()
     {
-        if (abilityChoice)
+        if (AbilityChoice)
             return;
         // DOTO: Show ability choice
+        state = GameState.Gameplay;
         Time.timeScale = 1;
     }
 
@@ -270,6 +277,11 @@ public class GameController : MonoBehaviour
         Destroy(DummyKnight.gameObject);
     }
 
+    [ButtonMethod]
+    void AddEXP50()
+    {
+        AddEXP(50);
+    }
     public static void AddEXP(int amount)
     {
         _XP += amount;

@@ -29,9 +29,28 @@ public class Priest : Hero
         
         isUsingAction = false;
     }
+
+    public override GameObject GetNearestTarget()
+    {
+        GameObject nearestTarget = null;
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, targetMask);
+        foreach (Collider2D target in targets)
+        {
+            if (nearestTarget == null)
+                nearestTarget = target.gameObject;
+            else if (Vector2.Distance(transform.position, target.transform.position) <
+                     Vector2.Distance(transform.position, nearestTarget.transform.position))
+            {
+                nearestTarget = target.gameObject;
+            }
+        }
+
+        return nearestTarget;
+    }
     
     protected override void Die()
     {
+        base.Die();
         StartCoroutine(Dies());
     }
 

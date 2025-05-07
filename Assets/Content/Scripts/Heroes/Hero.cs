@@ -26,9 +26,9 @@ public abstract class Hero : MonoBehaviour
     [Header("Hero specific values")]
     float _stamina;
 
-    private LayerMask targetMask;
+    protected LayerMask targetMask;
     
-    public GameObject GetNearestTarget()
+    public virtual GameObject GetNearestTarget()
     {
         GameObject nearestTarget = null;
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, targetMask);
@@ -43,6 +43,8 @@ public abstract class Hero : MonoBehaviour
             }
         }
         
+        if (nearestTarget == null)
+            return Boss.Transform.gameObject;
         return nearestTarget;
     }
     
@@ -110,14 +112,6 @@ public abstract class Hero : MonoBehaviour
 
     protected virtual void Die()
     {
-        try
-        {
-            GameController.AddEXP(20);
-        }
-        catch (System.Exception)
-        {
-            
-            throw;
-        }
+        try { GameController.AddEXP(20); } catch { }
     }
 }
