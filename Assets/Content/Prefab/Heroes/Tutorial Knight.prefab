@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2566684787439479940}
   - component: {fileID: 2079360372523425048}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 99999
   xp: 0
+  feedbackPlayer: {fileID: 0}
   meeleAttackRadius: 1
   enemyLayerMask:
     serializedVersion: 2
